@@ -2,6 +2,7 @@ package andreademasi.entities;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "eventi")
@@ -17,15 +18,21 @@ public class Evento {
     private tipoEvento tipoEvento;
     private int numero_massimo_partecipanti;
 
+    private Set<Partecipation> partecipationSet;
+
+    private Location location;
+
     public Evento() {
     }
 
-    public Evento(String titolo, Date data_evento, String descrizione, andreademasi.entities.tipoEvento tipoEvento, int numero_massimo_partecipanti) {
+    public Evento(String titolo, Date data_evento, String descrizione, andreademasi.entities.tipoEvento tipoEvento, int numero_massimo_partecipanti, Set<Partecipation> partecipationSet, Location location) {
         this.titolo = titolo;
         this.data_evento = data_evento;
         this.descrizione = descrizione;
         this.tipoEvento = tipoEvento;
         this.numero_massimo_partecipanti = numero_massimo_partecipanti;
+        this.partecipationSet = partecipationSet;
+        this.location = location;
     }
 
     public long getId() {
