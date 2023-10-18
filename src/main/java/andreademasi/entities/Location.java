@@ -11,13 +11,24 @@ public class Location {
 
     private String name;
     private String city;
+    @OneToOne(mappedBy = "location")
+    private Evento evento;
 
     public Location(String name, String city) {
         this.name = name;
         this.city = city;
     }
 
+
     public Location() {
+    }
+
+    public Evento getEvento() {
+        return evento;
+    }
+
+    public void setEvento(Evento evento) {
+        this.evento = evento;
     }
 
     public long getId() {

@@ -16,16 +16,17 @@ public class Person {
     private LocalDate birth_date;
     @Enumerated(EnumType.STRING)
     private Gender gender;
+    @OneToMany(mappedBy = "person")
     private List<Partecipation> partecipationList;
 
-    public Person(String first_name, String last_name, String email, LocalDate birth_date, Gender gender, List<Partecipation> partecipationList) {
+    public Person(String first_name, String last_name, String email, LocalDate birth_date, Gender gender) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
         this.birth_date = birth_date;
         this.gender = gender;
-        this.partecipationList = partecipationList;
     }
+
 
     public Person() {
     }

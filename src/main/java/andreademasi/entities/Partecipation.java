@@ -8,9 +8,13 @@ public class Partecipation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
+    @ManyToOne
+    @JoinColumn(name = "person_id")
     private Person person;
+    @ManyToOne
+    @JoinColumn(name = "evento_id")
     private Evento evento;
+
     @Enumerated(EnumType.STRING)
     private Status status;
 

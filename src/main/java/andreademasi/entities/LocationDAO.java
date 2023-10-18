@@ -15,7 +15,7 @@ public class LocationDAO {
         transaction.begin();
         em.persist(location);
         transaction.commit();
-        System.out.println("Persona salvata con successo");
+        System.out.println("Location salvata con successo");
     }
 
     public Location findById(long id) {
